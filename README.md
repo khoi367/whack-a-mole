@@ -19,4 +19,6 @@ https://khoi367.github.io/whack-a-mole/
 - Mỗi ván kéo dài cố định 60 giây.
 - Khi con chuột xuất hiện, click vào nó để ghi điểm.
 - Bom xuất hiện ngẫu nhiên; đập trúng bom sẽ bị trừ 5 điểm (điểm không thấp hơn 0).
+- Điểm số có hiệu ứng phản hồi; âm thanh tổng hợp phát khi đập chuột, trúng bom và kết thúc ván.
+- Dùng nút **Âm thanh** để bật hoặc tắt hiệu ứng âm thanh.
 - Trò chơi kết thúc khi hết thời gian.
