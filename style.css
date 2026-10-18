@@ -242,9 +242,9 @@ h1 {
 .mole::before,
 .mole::after {
   position: absolute;
-  top: -9%;
-  width: 37%;
-  height: 42%;
+  top: 5%;
+  width: 34%;
+  height: 40%;
   content: "";
   background: radial-gradient(ellipse at center, #e99891 0 32%, #c78369 35% 100%);
   border: 3px solid #8c543a;
@@ -252,13 +252,13 @@ h1 {
 }
 
 .mole::before {
-  left: 2%;
-  transform: rotate(-18deg);
+  left: 9%;
+  transform: rotate(-12deg);
 }
 
 .mole::after {
-  right: 2%;
-  transform: rotate(18deg);
+  right: 9%;
+  transform: rotate(12deg);
 }
 
 .mole-face {
