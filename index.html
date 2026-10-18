@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Đập Chuột - Whack a Mole</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Đập Chuột</h1>
+    <div class="info">
+      <div>Điểm: <span id="score">0</span></div>
+      <div>Thời gian: <span id="time">30</span>s</div>
+      <button id="start">Bắt đầu</button>
+      <label>
+        Thời lượng (s):
+        <input id="duration" type="number" value="30" min="5" max="120" />
+      </label>
+    </div>
+
+    <div class="board" id="board">
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+      <div class="hole"><div class="mole">🐭</div></div>
+    </div>
+
+    <div id="message" class="message" hidden></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
