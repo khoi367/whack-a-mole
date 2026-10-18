@@ -3,13 +3,13 @@ const scoreEl = document.getElementById('score');
 const timeEl = document.getElementById('time');
 const startBtn = document.getElementById('start');
 const messageEl = document.getElementById('message');
-const durationInput = document.getElementById('duration');
+const GAME_DURATION_SECONDS = 60;
 
 let lastHole;
 let timeUp = false;
 let score = 0;
 let gameTimer = null;
-let timeLeft = 30;
+let timeLeft = GAME_DURATION_SECONDS;
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -43,7 +43,7 @@ function peep() {
 function startGame() {
   score = 0;
   scoreEl.textContent = score;
-  timeLeft = parseInt(durationInput.value, 10) || 30;
+  timeLeft = GAME_DURATION_SECONDS;
   timeEl.textContent = timeLeft;
   messageEl.hidden = true;
 

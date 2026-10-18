@@ -16,5 +16,6 @@ https://khoi367.github.io/whack-a-mole/
 ## Cách chơi
 
 - Nhấn nút **Bắt đầu**.
+- Mỗi ván kéo dài cố định 60 giây.
 - Khi con chuột xuất hiện, click vào nó để ghi điểm.
 - Trò chơi kết thúc khi hết thời gian.
