@@ -1,4 +1,5 @@
 const holes = Array.from(document.querySelectorAll('.hole'));
+const popups = Array.from(document.querySelectorAll('.mole, .bomb'));
 const scoreEl = document.getElementById('score');
 const timeEl = document.getElementById('time');
 const startBtn = document.getElementById('start');
@@ -9,6 +10,7 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 let gameTimer = null;
+let popupTimer = null;
 let timeLeft = GAME_DURATION_SECONDS;
 
 function randomTime(min, max) {
@@ -30,10 +32,10 @@ function peep() {
   const max = Math.max(1500 - Math.min(score * 5, 300), 1200);
   const time = randomTime(min, max);
   const hole = randomHole(holes);
-  const mole = hole.querySelector('.mole');
-  mole.classList.add('up');
-  setTimeout(() => {
-    mole.classList.remove('up');
+  const popup = hole.querySelector(Math.random() < 0.25 ? '.bomb' : '.mole');
+  popup.classList.add('up');
+  popupTimer = setTimeout(() => {
+    popup.classList.remove('up');
     if (!timeUp) {
       peep();
     }
@@ -41,6 +43,10 @@ function peep() {
 }
 
 function startGame() {
+  clearInterval(gameTimer);
+  clearTimeout(popupTimer);
+  popups.forEach(popup => popup.classList.remove('up', 'hit'));
+
   score = 0;
   scoreEl.textContent = score;
   timeLeft = GAME_DURATION_SECONDS;
@@ -50,7 +56,6 @@ function startGame() {
   timeUp = false;
   peep();
 
-  clearInterval(gameTimer);
   gameTimer = setInterval(() => {
     timeLeft -= 1;
     timeEl.textContent = timeLeft;
@@ -63,6 +68,8 @@ function startGame() {
 }
 
 function endGame() {
+  clearTimeout(popupTimer);
+  popups.forEach(popup => popup.classList.remove('up'));
   messageEl.hidden = false;
   messageEl.textContent = `Kết thúc! Điểm của bạn: ${score}`;
   try {
@@ -78,18 +85,21 @@ function endGame() {
   }
 }
 
-function hitMole(e) {
+function hitPopup(e) {
   if (!e.isTrusted) return;
+  if (timeUp) return;
   if (!this.classList.contains('up')) return;
-  score += 1;
+  score = this.classList.contains('bomb')
+    ? Math.max(0, score - 5)
+    : score + 1;
   scoreEl.textContent = score;
   this.classList.add('hit');
   setTimeout(() => this.classList.remove('hit'), 150);
   this.classList.remove('up');
 }
 
-document.querySelectorAll('.mole').forEach(mole => {
-  mole.addEventListener('click', hitMole);
+popups.forEach(popup => {
+  popup.addEventListener('click', hitPopup);
 });
 
 startBtn.addEventListener('click', startGame);

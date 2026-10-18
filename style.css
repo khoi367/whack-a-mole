@@ -78,7 +78,10 @@ h1{
   padding-bottom:10%;
 }
 
-.mole{
+.mole,
+.bomb{
+  position:absolute;
+  bottom:10%;
   font-size:40px;
   width:72%;
   height:72%;
@@ -95,7 +98,8 @@ h1{
   box-shadow: 0 6px 0 rgba(0,0,0,0.15);
 }
 
-.hole .mole.up{
+.hole .mole.up,
+.hole .bomb.up{
   transform: translateY(0);
 }
 
@@ -106,8 +110,20 @@ h1{
   box-shadow: none;
 }
 
+.bomb.hit{
+  background:#d32f2f;
+  transform: translateY(0) scale(0.95);
+  transition: transform 80ms;
+  box-shadow: none;
+}
+
 .message{
   text-align:center;
   margin-top:12px;
   font-weight:700;
+}
+
+.instructions{
+  margin:12px 0 0;
+  text-align:center;
 }
