@@ -26,8 +26,8 @@ function randomHole(holes) {
 }
 
 function peep() {
-  const min = 350;
-  const max = Math.max(650 - Math.min(score * 5, 400), 400);
+  const min = 900;
+  const max = Math.max(1500 - Math.min(score * 5, 300), 1200);
   const time = randomTime(min, max);
   const hole = randomHole(holes);
   const mole = hole.querySelector('.mole');
