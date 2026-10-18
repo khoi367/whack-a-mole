@@ -7,29 +7,57 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <main class="container">
+    <p class="eyebrow">Khu vườn vui nhộn</p>
     <h1>Đập Chuột</h1>
     <div class="info">
-      <div>Điểm: <span id="score">0</span></div>
-      <div>Thời gian: <span id="time">60</span>s</div>
+      <div class="stat">Điểm <span id="score">0</span></div>
+      <div class="stat">Thời gian <span id="time">60</span>s</div>
       <button id="start">Bắt đầu</button>
     </div>
 
     <div class="board" id="board">
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
-      <div class="hole"><div class="mole">🐭</div><div class="bomb">💣</div></div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
+      <div class="hole">
+        <div class="mole"><span class="mole-face"><span class="mole-eyes"><i></i><i></i></span><span class="mole-nose"></span></span></div>
+        <div class="bomb"><span class="bomb-fuse"></span><span class="bomb-body"></span></div>
+      </div>
     </div>
 
     <div id="message" class="message" hidden></div>
     <p class="instructions">Đập chuột để được điểm, tránh đập trúng bom (−5 điểm).</p>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
